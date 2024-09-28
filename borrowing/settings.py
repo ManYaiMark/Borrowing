@@ -37,7 +37,28 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "borrow.apps.BorrowConfig",
+    "users.apps.UsersConfig",
+    "books.apps.BooksConfig",
+    "tailwind",
+    "theme",
+    'django_browser_reload',
+    
 ]
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = '/'
+
+TAILWIND_APP_NAME = 'theme'
+
+AUTH_USER_MODEL = 'users.CustomUser'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+NPM_BIN_PATH = 'C:/Program Files/nodejs/npm.cmd'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -47,6 +68,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "borrowing.urls"

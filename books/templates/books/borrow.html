@@ -1,0 +1,21 @@
+{% extends "books/base.html" %}
+{% load static %}
+{% block main %}
+{% csrf_token %}
+
+<div>
+  <div>
+    <p>UUUU</p>
+    <img src="{% static book.photo %}" alt="">
+  </div>
+
+
+  <div> {{ book.title }}</div>
+  <div> {{ book.category }}</div>
+  <div> {{ book.author }}</div>
+  <div> {{ book.description }}</div>
+  <div>เรื่องย่อ</div>
+  <div>{{ book.about }}</div>
+</div>
+
+{% endblock %}

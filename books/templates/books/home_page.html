@@ -1,0 +1,36 @@
+{% extends "books/base.html" %}
+{% load static %}
+{% block main %}
+{% csrf_token %}
+{% for book in books %}
+<a class="flex" href="{% url 'borrow' book.id %}">
+<div class="">
+  <div>
+    <div class="mr-5 text-lg">
+      <img src="{% static book.photo %}" alt="">
+    </div>
+  </div>
+  <div >
+    <div class="mr-5 text-lg">
+      {{ book.title }}
+    </div>
+  </div>
+  <div>
+    <div class="mr-5 text-lg">
+      {{ book.author }}
+    </div>
+  </div>
+  <div>
+    <div class="mr-5 text-lg">
+      {{ book.category }}
+    </div>
+  </div>
+  <div>
+    <div class="mb-16 mr-5 text-lg">
+      {{ book.description }}
+    </div>
+  </div>
+</div>
+{% endfor %}
+</a>
+{% endblock %}
