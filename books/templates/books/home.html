@@ -1,0 +1,21 @@
+{% load static %}
+<h2>First Page</h2>
+<div style="display: flex; ">
+{% for book in books %}
+
+    <div style="margin-right: 10px;width: 450px;">
+      <a href="{% url 'borrow' book.id %}">
+        <div>
+            <img src="{{ book.photo }}" alt="" width="200" height="300" style="object-fit: cover;">
+        </div>
+      </a>
+        <div>
+            <h3>{{ book.title }}</h3>
+            <p><strong>Author:</strong> {{ book.author }}</p>
+            <p><strong>Category:</strong> {{ book.category }}</p>
+            <p><strong>Description:</strong> {{ book.description }}</p>
+        </div>
+    </div>
+
+{% endfor %}
+</div>
